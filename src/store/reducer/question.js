@@ -1,4 +1,3 @@
-import { answerList } from "../actions/question";
 import { actionType } from "../actions/type";
 
 const initialState = {

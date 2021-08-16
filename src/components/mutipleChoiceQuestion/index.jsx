@@ -1,5 +1,4 @@
 import {
-  FormControl,
   FormControlLabel,
   FormLabel,
   Radio,
@@ -12,12 +11,12 @@ import { answerList } from "../../store/actions/question";
 import styles from "./style";
 
 class MutipleChoiceQuestion extends Component {
-  handleChange = (e, id, answer) => {
+  handleChange = (id, answer) => {
     this.props.dispatch(
       answerList({
         questionId: id,
         answers: {
-          content: e.currentTarget.value,
+          content: answer.content,
           exact: answer.exact,
         },
       })
@@ -39,7 +38,7 @@ class MutipleChoiceQuestion extends Component {
               value={answer.content}
               control={<Radio />}
               label={answer.content}
-              onChange={(e) => this.handleChange(e, id, answer)}
+              onChange={() => this.handleChange(id, answer)}
             />
           ))}
         </RadioGroup>
