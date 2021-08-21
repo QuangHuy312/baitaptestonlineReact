@@ -22,6 +22,7 @@ const reducer = (state = initialState, action) => {
         cloneAnswerList[foundAnswer].answers = action.payload.answers;
       }
       state.answerList = cloneAnswerList;
+
       return { ...state };
     }
 
